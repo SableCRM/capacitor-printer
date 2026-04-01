@@ -286,7 +286,7 @@ public class Printer {
             WriteResultCallback callback
         ) {
             try (
-                InputStream input = context.openFileInput(file.getName());
+                InputStream input = new java.io.FileInputStream(file);
                 OutputStream output = new FileOutputStream(destination.getFileDescriptor())
             ) {
                 byte[] buf = new byte[1024];
